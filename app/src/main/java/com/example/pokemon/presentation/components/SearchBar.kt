@@ -76,6 +76,8 @@ fun SearchBar(
                         )
                     }
 
+                Spacer(modifier = Modifier.width(17.dp))
+
                 BasicTextField(
                     value = input,
                     onValueChange = {

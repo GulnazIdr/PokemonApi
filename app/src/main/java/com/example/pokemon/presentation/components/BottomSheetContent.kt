@@ -64,7 +64,7 @@ fun BottomSheetContent(
         Spacer(modifier = Modifier.height(20.dp))
 
         LazyVerticalGrid(
-            columns = GridCells.Adaptive(105.dp)
+            columns = GridCells.Adaptive(110.dp)
         ) {
             items(17) {
                 FilterBox(
