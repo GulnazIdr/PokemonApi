@@ -64,7 +64,7 @@ fun BottomSheetContent(
         Spacer(modifier = Modifier.height(20.dp))
 
         LazyVerticalGrid(
-            columns = GridCells.Adaptive(100.dp)
+            columns = GridCells.Adaptive(105.dp)
         ) {
             items(17) {
                 FilterBox(
@@ -97,7 +97,7 @@ fun FilterBox(
         modifier = modifier
             .focusRequester(focusRequester)
             .focusable(interactionSource = interactionSource)
-            .padding(10.dp),
+            .padding(5.dp),
         colors = colors,
     ) {
         Text(
