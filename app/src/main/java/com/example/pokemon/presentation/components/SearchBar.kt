@@ -52,13 +52,26 @@ fun SearchBar(
                     .weight(1f)
                     .height(38.dp)
             ) {
-                if (input.isEmpty())
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Spacer(modifier = Modifier.width(17.dp))
 
+                Row(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Spacer(modifier = Modifier.width(17.dp))
+
+                    BasicTextField(
+                        value = input,
+                        onValueChange = {
+                            input = it
+                            onValueChanged(it)
+                        },
+                        textStyle = TextStyle(
+                            fontFamily = poppins,
+                            fontSize = 14.sp,
+                            color = lightGrey
+                        )
+                    )
+                    if (input.isEmpty()) {
                         Icon(
                             painter = painterResource(R.drawable.search),
                             contentDescription = "search icon",
@@ -75,21 +88,8 @@ fun SearchBar(
                             color = lightGrey
                         )
                     }
+                }
 
-                Spacer(modifier = Modifier.width(17.dp))
-
-                BasicTextField(
-                    value = input,
-                    onValueChange = {
-                        input = it
-                        onValueChanged(it)
-                    },
-                    textStyle = TextStyle(
-                        fontFamily = poppins,
-                        fontSize = 14.sp,
-                        color = lightGrey
-                    )
-                )
             }
 
             Spacer(modifier = Modifier.width(11.dp))
